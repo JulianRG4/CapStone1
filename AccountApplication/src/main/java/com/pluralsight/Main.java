@@ -98,6 +98,7 @@ public class Main {
         }
     }
 
+
     public static void displayLedger() {
 
         String ledgerScreen = "";
