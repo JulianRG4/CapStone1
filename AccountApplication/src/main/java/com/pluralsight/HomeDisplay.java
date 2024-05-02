@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
 
-public class HomeScreen {
+public class HomeDisplay {
 
     private static final Scanner userInputScanner = new Scanner(System.in);
 

@@ -12,24 +12,27 @@ public class ReportsDisplay {
     private static final Scanner userInput = new Scanner(System.in);
 
     public static void displayReports() {
+
+        String input = "";
         int reportsScreen = -1;
-        while (reportsScreen != 0) {
-            System.out.println(Colors.BLUE_BACKGROUND + " ");
-            System.out.println(Colors.BLACK + ",--------------------------------------------------------------------------\n" +
-                    "| CA|--------> U N I T E D   Y E A R   U P   B A Y N K <-------- ");
-            System.out.println(Colors.BLACK + " -Reports Screen" + "-".repeat(15));
-            System.out.println();
-            System.out.println("[1] Month to Date");
-            System.out.println("[2] Previous Month");
-            System.out.println("[3] year to Date");
-            System.out.println("[4] Previous year");
-            System.out.println("[5] Search By Vendor");
-            System.out.println("[0] Return to Reports");
-            System.out.println("-".repeat(30));
+        while (reportsScreen != 0)
+        {
 
             try {
-                reportsScreen = userInput.nextInt();
-                userInput.nextLine();
+                System.out.println(Colors.BLUE_BACKGROUND + " ");
+                System.out.println(Colors.BLACK + ",--------------------------------------------------------------------------\n" +
+                        "| CA|--------> U N I T E D   Y E A R   U P   B A Y N K <-------- ");
+                System.out.println(Colors.BLACK + " -Reports Screen" + "-".repeat(15));
+                System.out.println();
+                System.out.println("[1] Month to Date");
+                System.out.println("[2] Previous Month");
+                System.out.println("[3] year to Date");
+                System.out.println("[4] Previous year");
+                System.out.println("[5] Search By Vendor");
+                System.out.println("[0] Return to Reports");
+                System.out.println("-".repeat(30));
+                input =userInput.nextLine().strip().replace(" ", "");
+                reportsScreen = Integer.parseInt(input);
 
                 switch (reportsScreen) {
                     case 1:
@@ -76,6 +79,7 @@ public class ReportsDisplay {
                         break;
 
                     default:
+                        userInput.nextLine();
                         System.out.println(Colors.BLACK_BACKGROUND);
                         System.out.println(Colors.WHITE + "   __,_,\n" +
                                         "  [_|_/ \n" +
@@ -94,6 +98,7 @@ public class ReportsDisplay {
 
                 }
             } catch (InputMismatchException exception) {
+                userInput.nextLine();
                 System.out.println(Colors.BLACK_BACKGROUND);
                 System.out.println(Colors.WHITE + "   __,_,\n" +
                         "  [_|_/ \n" +
@@ -108,7 +113,23 @@ public class ReportsDisplay {
                         "     _)(  )(_\n" +
                         "    `---''---`");
                 System.out.println(Colors.RED + "Sorry, we ran into an error." + Colors.RESET);
-                userInput.nextLine();
+            }catch (Exception exception)
+            {
+                System.out.println(Colors.BLACK_BACKGROUND);
+                System.out.println(Colors.WHITE + "   __,_,\n" +
+                        "  [_|_/ \n" +
+                        "   //\n" +
+                        " _//    __\n" +
+                        "(_|)   |@@|\n" +
+                        " \\ \\__ \\--/ __\n" +
+                        "  \\o__|----|  |   __\n" +
+                        "      \\ }{ /\\ )_ / _\\\n" +
+                        "      /\\__/\\ \\__O (__\n" +
+                        "     (--/\\--)    \\__/\n" +
+                        "     _)(  )(_\n" +
+                        "    `---''---`");
+                System.out.println(Colors.RED + "Sorry, we ran into an error." + Colors.RESET);
+
             }
         }
     }
@@ -141,7 +162,7 @@ public class ReportsDisplay {
                 "/ / /\n" +
                 "\\/_/");
         System.out.println("-Transactions from beginning of the month to today"  + "-".repeat(100));
-        System.out.println();
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -182,7 +203,7 @@ public class ReportsDisplay {
                 "/ / /\n" +
                 "\\/_/");
         System.out.println("-Transactions from the previous month" + "-".repeat(110));
-        System.out.println();
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -222,7 +243,7 @@ public class ReportsDisplay {
                 "/ / /\n" +
                 "\\/_/");
         System.out.println("-Transactions from beginning of the year to today" + "-".repeat(100));
-        System.out.println();
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -264,7 +285,7 @@ public class ReportsDisplay {
                 "/ / /\n" +
                 "\\/_/");
         System.out.println("-Transactions from the previous year" + "-".repeat(114));
-        System.out.println();
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -304,7 +325,7 @@ public class ReportsDisplay {
                 "/ / /\n" +
                 "\\/_/");
         System.out.println("-Transactions for vendor: " + vendorName + "-".repeat(118));
-        System.out.println();
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 

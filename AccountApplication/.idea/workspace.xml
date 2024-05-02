@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10306ffd-0f9a-4459-b07d-0a4422fb6b99" name="Changes" comment="" />
+    <list default="true" id="10306ffd-0f9a-4459-b07d-0a4422fb6b99" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Untitled Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Untitled Diagram.drawio" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
