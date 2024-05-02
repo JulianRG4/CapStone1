@@ -12,6 +12,8 @@ public class LedgerDisplay {
         String ledgerScreen = "";
         while (!ledgerScreen.equals("H")) {
             System.out.println(Colors.BLUE_BACKGROUND + " ");
+            System.out.println(Colors.BLACK + ",--------------------------------------------------------------------------\n" +
+                    "| CA|--------> U N I T E D   Y E A R   U P   B A Y N K <-------- ");
             System.out.println(Colors.BLACK + "--------Ledger Screen--------");
             System.out.println();
             System.out.println("[A] Display all Entries ");
@@ -29,7 +31,7 @@ public class LedgerDisplay {
                     allEntries();
                     System.out.println();
                     System.out.println("Press Enter to return ");
-                    System.out.println("-".repeat(88));
+                    System.out.println("-".repeat(132));
                     userInput.nextLine();
                     userInput.nextLine();
                     break;
@@ -38,7 +40,7 @@ public class LedgerDisplay {
                     allDeposits();
                     System.out.println();
                     System.out.println("Press Enter to return ");
-                    System.out.println("-".repeat(88));
+                    System.out.println("-".repeat(135));
                     userInput.nextLine();
                     userInput.nextLine();
                     break;
@@ -47,9 +49,9 @@ public class LedgerDisplay {
                     allPayments();
                     System.out.println();
                     System.out.println("Press Enter to return ");
-                    System.out.println("-".repeat(88));
+                    System.out.println("-".repeat(135));
                     userInput.nextLine();
-                   userInput.nextLine();
+                    userInput.nextLine();
                     break;
 
                 case "R":
@@ -82,9 +84,16 @@ public class LedgerDisplay {
     }
 
     public static void allEntries() {
-        System.out.println(Colors.WHITE_BACKGROUND + " ");
-        System.out.println(Colors.BLACK + "-All Entries" + "-".repeat(75));
-        System.out.println();
+        System.out.println(Colors.WHITE_BACKGROUND + Colors.BLACK + " (`/\\\n" +
+                " `=\\/\\ __...--~~~~~-._   _.-~~~~~--...__\n" +
+                "  `=\\/\\  Payments   \\ /    Deposits   \\\\\n" +
+                "   `=\\/                V                 \\\\\n" +
+                "   //_\\___--~~~~~~-._  |  _.-~~~~~~--...__\\\\\n" +
+                "  //  ) (..----~~~~._\\ | /_.~~~~----.....__\\\\\n" +
+                " ===( INK )==========\\\\|//====================\n" +
+                "_________________________________________________________");
+        System.out.println("-All Entries" + "-".repeat(120));
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -96,9 +105,18 @@ public class LedgerDisplay {
     }
 
     public static void allDeposits() {
-        System.out.println(Colors.GREEN_BACKGROUND + " ");
-        System.out.println(Colors.BLACK + "-Deposit Screen" + "-".repeat(75));
-        System.out.println();
+        System.out.println(Colors.GREEN_BACKGROUND + Colors.BLACK + " ,         ,\n" +
+                "|\\\\\\\\ ////|\n" +
+                "| \\\\\\V/// |\n" +
+                "|  |~~~|  |\n" +
+                "|  |===|  |\n" +
+                "|  |D  |  |\n" +
+                "|  | P |  |\n" +
+                " \\ |  O| /\n" +
+                "  \\|===|/\n" +
+                "   '---'");
+        System.out.println("-All Deposits" + "-".repeat(120));
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 
@@ -112,9 +130,18 @@ public class LedgerDisplay {
     }
 
     public static void allPayments() {
-        System.out.println(Colors.RED_BACKGROUND + " ");
-        System.out.println(Colors.BLACK + "-Payments Screen" + "-".repeat(75));
-        System.out.println();
+        System.out.println(Colors.RED_BACKGROUND + Colors.BLACK + " ,         ,\n" +
+                "|\\\\\\\\ ////|\n" +
+                "| \\\\\\V/// |\n" +
+                "|  |~~~|  |\n" +
+                "|  |===|  |\n" +
+                "|  |P  |  |\n" +
+                "|  | A |  |\n" +
+                " \\ |  Y| /\n" +
+                "  \\|===|/\n" +
+                "   '---'");
+        System.out.println("-All Payments" + "-".repeat(120));
+        System.out.println("Date:                          Time:                          Description:                  Vendor:                        Amount:");
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
 

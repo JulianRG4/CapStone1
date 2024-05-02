@@ -15,7 +15,9 @@ public class ReportsDisplay {
         int reportsScreen = -1;
         while (reportsScreen != 0) {
             System.out.println(Colors.BLUE_BACKGROUND + " ");
-            System.out.println(Colors.BLACK + " -Reports Screen" + "-".repeat(70));
+            System.out.println(Colors.BLACK + ",--------------------------------------------------------------------------\n" +
+                    "| CA|--------> U N I T E D   Y E A R   U P   B A Y N K <-------- ");
+            System.out.println(Colors.BLACK + " -Reports Screen" + "-".repeat(15));
             System.out.println();
             System.out.println("[1] Month to Date");
             System.out.println("[2] Previous Month");
@@ -23,7 +25,7 @@ public class ReportsDisplay {
             System.out.println("[4] Previous year");
             System.out.println("[5] Search By Vendor");
             System.out.println("[0] Return to Reports");
-            System.out.println("-".repeat(85));
+            System.out.println("-".repeat(30));
 
             try {
                 reportsScreen = userInput.nextInt();
@@ -33,7 +35,7 @@ public class ReportsDisplay {
                     case 1:
                         monthToDay();
                         System.out.println();
-                        System.out.println("-".repeat(85));
+                        System.out.println("-".repeat(150));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -41,7 +43,7 @@ public class ReportsDisplay {
                     case 2:
                         previousMonth();
                         System.out.println();
-                        System.out.println("-".repeat(85));
+                        System.out.println("-".repeat(150));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -49,7 +51,7 @@ public class ReportsDisplay {
                     case 3:
                         yearToDay();
                         System.out.println();
-                        System.out.println("-".repeat(85));
+                        System.out.println("-".repeat(150));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -57,7 +59,7 @@ public class ReportsDisplay {
                     case 4:
                         previousYear();
                         System.out.println();
-                        System.out.println("-".repeat(85));
+                        System.out.println("-".repeat(150));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -65,7 +67,7 @@ public class ReportsDisplay {
                     case 5:
                         searchByVendor();
                         System.out.println();
-                        System.out.println("-".repeat(85));
+                        System.out.println("-".repeat(150));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -105,7 +107,7 @@ public class ReportsDisplay {
                         "     (--/\\--)    \\__/\n" +
                         "     _)(  )(_\n" +
                         "    `---''---`");
-                System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
+                System.out.println(Colors.RED + "Sorry, we ran into an error." + Colors.RESET);
                 userInput.nextLine();
             }
         }
@@ -117,7 +119,28 @@ public class ReportsDisplay {
         LocalDate startOfMonth = today.withDayOfMonth(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("-Transactions from beginning of the month to today"  + "-".repeat(34));
+        System.out.println("            ______              \n" +
+                "         .-'      `-.           \n" +
+                "       .'            `.         \n" +
+                "      /                \\        \n" +
+                "     ;                 ;`       \n" +
+                "     |   Month to Day  |;       \n" +
+                "     ;                 ;|\n" +
+                "     '\\               / ;       \n" +
+                "      \\`.           .' /        \n" +
+                "       `.`-._____.-' .'         \n" +
+                "         / /`_____.-'           \n" +
+                "        / / /                   \n" +
+                "       / / /\n" +
+                "      / / /\n" +
+                "     / / /\n" +
+                "    / / /\n" +
+                "   / / /\n" +
+                "  / / /\n" +
+                " / / /\n" +
+                "/ / /\n" +
+                "\\/_/");
+        System.out.println("-Transactions from beginning of the month to today"  + "-".repeat(100));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -137,7 +160,28 @@ public class ReportsDisplay {
         LocalDate lastDayOfPreviousMonth = firstDayOfCurrentMonth.minusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("-Transactions from the previous month" + "-".repeat(48));
+        System.out.println("            ______              \n" +
+                "         .-'      `-.           \n" +
+                "       .'            `.         \n" +
+                "      /                \\        \n" +
+                "     ;                 ;`       \n" +
+                "     | Previous Month  |;       \n" +
+                "     ;                 ;|\n" +
+                "     '\\               / ;       \n" +
+                "      \\`.           .' /        \n" +
+                "       `.`-._____.-' .'         \n" +
+                "         / /`_____.-'           \n" +
+                "        / / /                   \n" +
+                "       / / /\n" +
+                "      / / /\n" +
+                "     / / /\n" +
+                "    / / /\n" +
+                "   / / /\n" +
+                "  / / /\n" +
+                " / / /\n" +
+                "/ / /\n" +
+                "\\/_/");
+        System.out.println("-Transactions from the previous month" + "-".repeat(110));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -156,7 +200,28 @@ public class ReportsDisplay {
         LocalDate startOfYear = today.withDayOfYear(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("-Transactions from beginning of the year to today" + "-".repeat(38));
+        System.out.println("            ______              \n" +
+                "         .-'      `-.           \n" +
+                "       .'            `.         \n" +
+                "      /                \\        \n" +
+                "     ;                 ;`       \n" +
+                "     |   Year to Day   |;       \n" +
+                "     ;                 ;|\n" +
+                "     '\\               / ;       \n" +
+                "      \\`.           .' /        \n" +
+                "       `.`-._____.-' .'         \n" +
+                "         / /`_____.-'           \n" +
+                "        / / /                   \n" +
+                "       / / /\n" +
+                "      / / /\n" +
+                "     / / /\n" +
+                "    / / /\n" +
+                "   / / /\n" +
+                "  / / /\n" +
+                " / / /\n" +
+                "/ / /\n" +
+                "\\/_/");
+        System.out.println("-Transactions from beginning of the year to today" + "-".repeat(100));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -177,7 +242,28 @@ public class ReportsDisplay {
         LocalDate endOfPreviousYear = startOfCurrentYear.minusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("-Transactions from the previous year" + "-".repeat(50));
+        System.out.println("            ______              \n" +
+                "         .-'      `-.           \n" +
+                "       .'            `.         \n" +
+                "      /                \\        \n" +
+                "     ;                 ;`       \n" +
+                "     |  Previous Year  |;       \n" +
+                "     ;                 ;|\n" +
+                "     '\\               / ;       \n" +
+                "      \\`.           .' /        \n" +
+                "       `.`-._____.-' .'         \n" +
+                "         / /`_____.-'           \n" +
+                "        / / /                   \n" +
+                "       / / /\n" +
+                "      / / /\n" +
+                "     / / /\n" +
+                "    / / /\n" +
+                "   / / /\n" +
+                "  / / /\n" +
+                " / / /\n" +
+                "/ / /\n" +
+                "\\/_/");
+        System.out.println("-Transactions from the previous year" + "-".repeat(114));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -196,7 +282,28 @@ public class ReportsDisplay {
         String vendorName = userInput.nextLine();
         boolean found = false;
 
-        System.out.println("-Transactions for vendor: " + vendorName + "-".repeat(53));
+        System.out.println("            ______              \n" +
+                "         .-'      `-.           \n" +
+                "       .'            `.         \n" +
+                "      /                \\        \n" +
+                "     ;                 ;`       \n" +
+                "     |      Vendor     |;       \n" +
+                "     ;                 ;|\n" +
+                "     '\\               / ;       \n" +
+                "      \\`.           .' /        \n" +
+                "       `.`-._____.-' .'         \n" +
+                "         / /`_____.-'           \n" +
+                "        / / /                   \n" +
+                "       / / /\n" +
+                "      / / /\n" +
+                "     / / /\n" +
+                "    / / /\n" +
+                "   / / /\n" +
+                "  / / /\n" +
+                " / / /\n" +
+                "/ / /\n" +
+                "\\/_/");
+        System.out.println("-Transactions for vendor: " + vendorName + "-".repeat(118));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");

@@ -26,7 +26,7 @@ public class CSVReader {
                 String vendor = parts[3].trim();
                 double amount = Double.parseDouble(parts[4].trim());
 
-                Transactions transaction = new Transactions(date, description, vendor, amount);
+                Transactions transaction = new Transactions(date, time, description, vendor, amount);
                 transactions.add(transaction);
             }
         } catch (IOException | ArrayIndexOutOfBoundsException | NumberFormatException exception) {

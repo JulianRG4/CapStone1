@@ -12,9 +12,9 @@ public class Transactions
     private String vendor;
     private double amount;
 
-    public Transactions(LocalDate date, String description, String vendor, double amount) {
+    public Transactions(LocalDate date, LocalTime time, String description, String vendor, double amount) {
         this.date = date;
-        this.time = LocalTime.now();
+        this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.amount = amount;
@@ -66,7 +66,16 @@ public class Transactions
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         String formattedDate = date.format(dateFormatter);
         String formattedTime = time.format(timeFormatter);
-        return formattedDate + "|" + formattedTime + "|" + description + "|" + vendor + "|" + amount;
+        return String.format("%-30s|%-30s|%-30s|%-30s|%-30.2f", formattedDate, formattedTime, description, vendor, amount);
+    }
+
+    public String toCsvString()
+    {
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String formattedDate = date.format(dateFormatter);
+        String formattedTime = time.format(timeFormatter);
+        return String.format("%s|%s|%s|%s|%.2f", formattedDate, formattedTime, description, vendor, amount);
     }
 }
 
