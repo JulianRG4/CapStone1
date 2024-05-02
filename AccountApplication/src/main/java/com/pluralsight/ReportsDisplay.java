@@ -14,15 +14,16 @@ public class ReportsDisplay {
     public static void displayReports() {
         int reportsScreen = -1;
         while (reportsScreen != 0) {
+            System.out.println(Colors.BLUE_BACKGROUND + " ");
+            System.out.println(Colors.BLACK + " -Reports Screen" + "-".repeat(70));
             System.out.println();
-            System.out.println("--------Reports Screen--------");
-            System.out.println();
-            System.out.println("1) Month to Date");
-            System.out.println("2) Previous Month");
-            System.out.println("3) year to Date");
-            System.out.println("4) Previous year");
-            System.out.println("5) Search By Vendor");
-            System.out.println("0) Return to Reports");
+            System.out.println("[1] Month to Date");
+            System.out.println("[2] Previous Month");
+            System.out.println("[3] year to Date");
+            System.out.println("[4] Previous year");
+            System.out.println("[5] Search By Vendor");
+            System.out.println("[0] Return to Reports");
+            System.out.println("-".repeat(85));
 
             try {
                 reportsScreen = userInput.nextInt();
@@ -31,30 +32,40 @@ public class ReportsDisplay {
                 switch (reportsScreen) {
                     case 1:
                         monthToDay();
+                        System.out.println();
+                        System.out.println("-".repeat(85));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
 
                     case 2:
                         previousMonth();
+                        System.out.println();
+                        System.out.println("-".repeat(85));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
 
                     case 3:
                         yearToDay();
+                        System.out.println();
+                        System.out.println("-".repeat(85));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
 
                     case 4:
                         previousYear();
+                        System.out.println();
+                        System.out.println("-".repeat(85));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
 
                     case 5:
                         searchByVendor();
+                        System.out.println();
+                        System.out.println("-".repeat(85));
                         System.out.println("Press Enter to Return");
                         userInput.nextLine();
                         break;
@@ -63,25 +74,50 @@ public class ReportsDisplay {
                         break;
 
                     default:
-                        System.out.println("Invalid input, Press Enter to try again.");
+                        System.out.println(Colors.BLACK_BACKGROUND);
+                        System.out.println(Colors.WHITE + "   __,_,\n" +
+                                        "  [_|_/ \n" +
+                                        "   //\n" +
+                                        " _//    __\n" +
+                                        "(_|)   |@@|\n" +
+                                        " \\ \\__ \\--/ __\n" +
+                                        "  \\o__|----|  |   __\n" +
+                                        "      \\ }{ /\\ )_ / _\\\n" +
+                                        "      /\\__/\\ \\__O (__\n" +
+                                        "     (--/\\--)    \\__/\n" +
+                                        "     _)(  )(_\n" +
+                                        "    `---''---`");
+                        System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
                         userInput.nextLine();
 
                 }
             } catch (InputMismatchException exception) {
-                System.out.println("Sorry, Please enter a valid number");
-                System.out.println("Press enter to try again");
-                userInput.nextLine();
+                System.out.println(Colors.BLACK_BACKGROUND);
+                System.out.println(Colors.WHITE + "   __,_,\n" +
+                        "  [_|_/ \n" +
+                        "   //\n" +
+                        " _//    __\n" +
+                        "(_|)   |@@|\n" +
+                        " \\ \\__ \\--/ __\n" +
+                        "  \\o__|----|  |   __\n" +
+                        "      \\ }{ /\\ )_ / _\\\n" +
+                        "      /\\__/\\ \\__O (__\n" +
+                        "     (--/\\--)    \\__/\n" +
+                        "     _)(  )(_\n" +
+                        "    `---''---`");
+                System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
                 userInput.nextLine();
             }
         }
     }
 
     public static void monthToDay() {
+        System.out.println(Colors.WHITE_BACKGROUND + " ");
         LocalDate today = LocalDate.now();
         LocalDate startOfMonth = today.withDayOfMonth(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("--------Transactions from beginning of the month to today--------");
+        System.out.println("-Transactions from beginning of the month to today"  + "-".repeat(34));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -94,13 +130,14 @@ public class ReportsDisplay {
     }
 
     public static void previousMonth() {
+        System.out.println(Colors.WHITE_BACKGROUND + " ");
         LocalDate today = LocalDate.now();
         LocalDate firstDayOfCurrentMonth = today.withDayOfMonth(1);
         LocalDate firstDayOfPreviousMonth = firstDayOfCurrentMonth.minusMonths(1);
         LocalDate lastDayOfPreviousMonth = firstDayOfCurrentMonth.minusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("--------Transactions from the previous month--------");
+        System.out.println("-Transactions from the previous month" + "-".repeat(48));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -114,11 +151,12 @@ public class ReportsDisplay {
     }
 
     public static void yearToDay() {
+        System.out.println(Colors.WHITE_BACKGROUND + " ");
         LocalDate today = LocalDate.now();
         LocalDate startOfYear = today.withDayOfYear(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("--------Transactions from beginning of the year to today--------");
+        System.out.println("-Transactions from beginning of the year to today" + "-".repeat(38));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -132,13 +170,14 @@ public class ReportsDisplay {
     }
 
     public static void previousYear() {
+        System.out.println(Colors.WHITE_BACKGROUND + " ");
         LocalDate today = LocalDate.now();
         LocalDate startOfCurrentYear = today.withDayOfYear(1);
         LocalDate startOfPreviousYear = startOfCurrentYear.minusYears(1);
         LocalDate endOfPreviousYear = startOfCurrentYear.minusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        System.out.println("--------Transactions from the previous year--------");
+        System.out.println("-Transactions from the previous year" + "-".repeat(50));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -152,11 +191,12 @@ public class ReportsDisplay {
     }
 
     public static void searchByVendor() {
+        System.out.println(Colors.WHITE_BACKGROUND + " ");
         System.out.println("Enter the vendor name to search: ");
         String vendorName = userInput.nextLine();
         boolean found = false;
 
-        System.out.println("--------Transactions for vendor: " + vendorName + "--------");
+        System.out.println("-Transactions for vendor: " + vendorName + "-".repeat(53));
         System.out.println();
 
         List<Transactions> transactions = CSVReader.csvReader("Files/Transaction.csv");
@@ -170,7 +210,20 @@ public class ReportsDisplay {
         }
 
         if (!found) {
-            System.out.println("No transactions found for vendor: " + vendorName);
+            System.out.println(Colors.BLACK_BACKGROUND);
+            System.out.println("   __,_,\n" +
+                    "  [_|_/ \n" +
+                    "   //\n" +
+                    " _//    __\n" +
+                    "(_|)   |@@|\n" +
+                    " \\ \\__ \\--/ __\n" +
+                    "  \\o__|----|  |   __\n" +
+                    "      \\ }{ /\\ )_ / _\\\n" +
+                    "      /\\__/\\ \\__O (__\n" +
+                    "     (--/\\--)    \\__/\n" +
+                    "     _)(  )(_\n" +
+                    "    `---''---`");
+            System.out.println(Colors.RED + "No transactions found for vendor." + vendorName + Colors.RESET);
         }
     }
 }
