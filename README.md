@@ -32,7 +32,8 @@ These were a bit different because they used ints and also had 0 as the return o
 //
 -I also had to add another userInput to not break the code when scroling.
 -I also fixed an error that would allow me to press enter multiple times without giving me an error code. this was fixed by adding another String variable since we were looking for an int. 
-//String input = "";
+```java
+String input = "";
         int reportsScreen = -1;
         while (reportsScreen != 0)
         {
@@ -52,7 +53,7 @@ These were a bit different because they used ints and also had 0 as the return o
                 System.out.println("-".repeat(30));
                 input =userInput.nextLine().strip().replace(" ", "");
                 reportsScreen = Integer.parseInt(input);
-//
+```
 -I also had to add another catch statment so that it would actually give me an error code and not break my code with an error. 
 -The logic for finding specific day was interesting, for example 
 // if (!transactionDate.isBefore(startOfPreviousYear) && !transactionDate.isAfter(endOfPreviousYear))
@@ -62,14 +63,15 @@ These were a bit different because they used ints and also had 0 as the return o
 
 ---CSVReader- This reads the CSV files whenever it is called and makes an arraylist of the file so that I can easily split it if needed or format it how I would like. 
 -I didn now start with this class and like mentioned before was reading from the file directly at the start. This allowed me to replace redundent code and have more flexability.
-// String line = scanner.nextLine();
+```java
+ String line = scanner.nextLine();
                 String[] parts = line.split("\\|");
                 LocalDate date = LocalDate.parse(parts[0], dateFormatter);
                 LocalTime time = LocalTime.parse(parts[1].trim(), timeFormatter);
                 String description = parts[2].trim();
                 String vendor = parts[3].trim();
                 double amount = Double.parseDouble(parts[4].trim());
-//
+```
 -Something interesting was that I originally didnt use the time variable because I was using LocalTime.Now and only added it because I needed it to keep the order of sections. I later relized I needed to use it instead of the LocalTime.Now and put it into effect. 
 -Moving this class from the main file broke alot of things for me and was a challange because I was used to do my code in one class. This CapStone allowed me to expand on this. 
 
@@ -77,13 +79,13 @@ These were a bit different because they used ints and also had 0 as the return o
 -I used a formatter to get the time and day format I needed. 
 -In tis class I also later made a second String file. "toString: writes to the cosole and the "toCsvString" wrtites to the file. these are the same exept toString has a -30 after the % in order to organize them into colums.
 toString
-//
+```java
 -return String.format("%-30s|%-30s|%-30s|%-30s|%-30.2f", formattedDate, formattedTime, description, vendor, amount);
-//
+```
 -toCsvString
-// 
+```java
  return String.format("%s|%s|%s|%s|%.2f", formattedDate, formattedTime, description, vendor, amount);
-//
+```
 
 ---Colors class- Contains my class to easily call in colors for UI reasons in my classes.
 -It was cool learning about this because before I didnt know you could add colors 
