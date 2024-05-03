@@ -80,54 +80,45 @@ public class ReportsDisplay {
 
                     default:
                         userInput.nextLine();
-                        System.out.println(Colors.BLACK_BACKGROUND);
-                        System.out.println(Colors.WHITE + "   __,_,\n" +
-                                        "  [_|_/ \n" +
-                                        "   //\n" +
-                                        " _//    __\n" +
-                                        "(_|)   |@@|\n" +
-                                        " \\ \\__ \\--/ __\n" +
-                                        "  \\o__|----|  |   __\n" +
-                                        "      \\ }{ /\\ )_ / _\\\n" +
-                                        "      /\\__/\\ \\__O (__\n" +
-                                        "     (--/\\--)    \\__/\n" +
-                                        "     _)(  )(_\n" +
-                                        "    `---''---`");
+                        System.out.println(Colors.BLACK_BACKGROUND + Colors.WHITE);
+                        System.out.println("         __\n" +
+                                " _(\\    |@@|\n" +
+                                "(__/\\__ \\--/ __\n" +
+                                "   \\___|----|  |   __\n" +
+                                "       \\ }{ /\\ )_ / _\\\n" +
+                                "       /\\__/\\ \\__O (__\n" +
+                                "      (--/\\--)    \\__/\n" +
+                                "      _)(  )(_\n" +
+                                "     `---''---`");
                         System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
                         userInput.nextLine();
 
                 }
             } catch (InputMismatchException exception) {
                 userInput.nextLine();
-                System.out.println(Colors.BLACK_BACKGROUND);
-                System.out.println(Colors.WHITE + "   __,_,\n" +
-                        "  [_|_/ \n" +
-                        "   //\n" +
-                        " _//    __\n" +
-                        "(_|)   |@@|\n" +
-                        " \\ \\__ \\--/ __\n" +
-                        "  \\o__|----|  |   __\n" +
-                        "      \\ }{ /\\ )_ / _\\\n" +
-                        "      /\\__/\\ \\__O (__\n" +
-                        "     (--/\\--)    \\__/\n" +
-                        "     _)(  )(_\n" +
-                        "    `---''---`");
+                System.out.println(Colors.BLACK_BACKGROUND + Colors.WHITE);
+                System.out.println("         __\n" +
+                        " _(\\    |@@|\n" +
+                        "(__/\\__ \\--/ __\n" +
+                        "   \\___|----|  |   __\n" +
+                        "       \\ }{ /\\ )_ / _\\\n" +
+                        "       /\\__/\\ \\__O (__\n" +
+                        "      (--/\\--)    \\__/\n" +
+                        "      _)(  )(_\n" +
+                        "     `---''---`");
                 System.out.println(Colors.RED + "Sorry, we ran into an error." + Colors.RESET);
             }catch (Exception exception)
             {
-                System.out.println(Colors.BLACK_BACKGROUND);
-                System.out.println(Colors.WHITE + "   __,_,\n" +
-                        "  [_|_/ \n" +
-                        "   //\n" +
-                        " _//    __\n" +
-                        "(_|)   |@@|\n" +
-                        " \\ \\__ \\--/ __\n" +
-                        "  \\o__|----|  |   __\n" +
-                        "      \\ }{ /\\ )_ / _\\\n" +
-                        "      /\\__/\\ \\__O (__\n" +
-                        "     (--/\\--)    \\__/\n" +
-                        "     _)(  )(_\n" +
-                        "    `---''---`");
+                System.out.println(Colors.BLACK_BACKGROUND + Colors.WHITE);
+                System.out.println("         __\n" +
+                        " _(\\    |@@|\n" +
+                        "(__/\\__ \\--/ __\n" +
+                        "   \\___|----|  |   __\n" +
+                        "       \\ }{ /\\ )_ / _\\\n" +
+                        "       /\\__/\\ \\__O (__\n" +
+                        "      (--/\\--)    \\__/\n" +
+                        "      _)(  )(_\n" +
+                        "     `---''---`");
                 System.out.println(Colors.RED + "Sorry, we ran into an error." + Colors.RESET);
 
             }
@@ -339,18 +330,15 @@ public class ReportsDisplay {
 
         if (!found) {
             System.out.println(Colors.BLACK_BACKGROUND);
-            System.out.println("   __,_,\n" +
-                    "  [_|_/ \n" +
-                    "   //\n" +
-                    " _//    __\n" +
-                    "(_|)   |@@|\n" +
-                    " \\ \\__ \\--/ __\n" +
-                    "  \\o__|----|  |   __\n" +
-                    "      \\ }{ /\\ )_ / _\\\n" +
-                    "      /\\__/\\ \\__O (__\n" +
-                    "     (--/\\--)    \\__/\n" +
-                    "     _)(  )(_\n" +
-                    "    `---''---`");
+            System.out.println("         __\n" +
+                    " _(\\    |@@|\n" +
+                    "(__/\\__ \\--/ __\n" +
+                    "   \\___|----|  |   __\n" +
+                    "       \\ }{ /\\ )_ / _\\\n" +
+                    "       /\\__/\\ \\__O (__\n" +
+                    "      (--/\\--)    \\__/\n" +
+                    "      _)(  )(_\n" +
+                    "     `---''---`");
             System.out.println(Colors.RED + "No transactions found for vendor." + vendorName + Colors.RESET);
         }
     }

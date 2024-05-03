@@ -63,18 +63,15 @@ public class LedgerDisplay {
 
                 default:
                     System.out.println(Colors.BLACK_BACKGROUND);
-                    System.out.println("   __,_,\n" +
-                            "  [_|_/ \n" +
-                            "   //\n" +
-                            " _//    __\n" +
-                            "(_|)   |@@|\n" +
-                            " \\ \\__ \\--/ __\n" +
-                            "  \\o__|----|  |   __\n" +
-                            "      \\ }{ /\\ )_ / _\\\n" +
-                            "      /\\__/\\ \\__O (__\n" +
-                            "     (--/\\--)    \\__/\n" +
-                            "     _)(  )(_\n" +
-                            "    `---''---`");
+                    System.out.println("         __\n" +
+                            " _(\\    |@@|\n" +
+                            "(__/\\__ \\--/ __\n" +
+                            "   \\___|----|  |   __\n" +
+                            "       \\ }{ /\\ )_ / _\\\n" +
+                            "       /\\__/\\ \\__O (__\n" +
+                            "      (--/\\--)    \\__/\n" +
+                            "      _)(  )(_\n" +
+                            "     `---''---`");
                     System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
                     userInput.nextLine();
                     userInput.nextLine();

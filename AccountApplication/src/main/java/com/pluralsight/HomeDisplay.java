@@ -60,18 +60,15 @@ public class HomeDisplay {
                     break;
                 default:
                     System.out.println(Colors.BLACK_BACKGROUND);
-                    System.out.println("   __,_,\n" +
-                            "  [_|_/ \n" +
-                            "   //\n" +
-                            " _//    __\n" +
-                            "(_|)   |@@|\n" +
-                            " \\ \\__ \\--/ __\n" +
-                            "  \\o__|----|  |   __\n" +
-                            "      \\ }{ /\\ )_ / _\\\n" +
-                            "      /\\__/\\ \\__O (__\n" +
-                            "     (--/\\--)    \\__/\n" +
-                            "     _)(  )(_\n" +
-                            "    `---''---`");
+                    System.out.println("         __\n" +
+                            " _(\\    |@@|\n" +
+                            "(__/\\__ \\--/ __\n" +
+                            "   \\___|----|  |   __\n" +
+                            "       \\ }{ /\\ )_ / _\\\n" +
+                            "       /\\__/\\ \\__O (__\n" +
+                            "      (--/\\--)    \\__/\n" +
+                            "      _)(  )(_\n" +
+                            "     `---''---`");
                     System.out.println(Colors.RED + "Invalid input, Press Enter to try again." + Colors.RESET);
                     userInputScanner.nextLine();
                     System.out.println();
@@ -101,7 +98,7 @@ public class HomeDisplay {
         double amount = Double.parseDouble(userInputScanner.nextLine());
 
         LocalDate date = LocalDate.now();
-        LocalTime time =LocalTime.now();
+        LocalTime time = LocalTime.now();
 
         Transactions deposit = new Transactions(date,time, description, vendor, amount);
 
@@ -122,18 +119,15 @@ public class HomeDisplay {
             System.out.println("Deposit Successfully Added!");
         } catch (IOException exception) {
             System.out.println(Colors.BLACK_BACKGROUND);;
-            System.out.println("   __,_,\n" +
-                    "  [_|_/ \n" +
-                    "   //\n" +
-                    " _//    __\n" +
-                    "(_|)   |@@|\n" +
-                    " \\ \\__ \\--/ __\n" +
-                    "  \\o__|----|  |   __\n" +
-                    "      \\ }{ /\\ )_ / _\\\n" +
-                    "      /\\__/\\ \\__O (__\n" +
-                    "     (--/\\--)    \\__/\n" +
-                    "     _)(  )(_\n" +
-                    "    `---''---`");
+            System.out.println("         __\n" +
+                    " _(\\    |@@|\n" +
+                    "(__/\\__ \\--/ __\n" +
+                    "   \\___|----|  |   __\n" +
+                    "       \\ }{ /\\ )_ / _\\\n" +
+                    "       /\\__/\\ \\__O (__\n" +
+                    "      (--/\\--)    \\__/\n" +
+                    "      _)(  )(_\n" +
+                    "     `---''---`");
             System.out.println(Colors.RED + "Sorry There Was an Error." + Colors.RESET);
         }
     }
@@ -189,18 +183,15 @@ public class HomeDisplay {
             System.out.println("Payment Successfully Added!");
         } catch (IOException exception) {
             System.out.println(Colors.BLACK_BACKGROUND);
-            System.out.println("   __,_,\n" +
-                    "  [_|_/ \n" +
-                    "   //\n" +
-                    " _//    __\n" +
-                    "(_|)   |@@|\n" +
-                    " \\ \\__ \\--/ __\n" +
-                    "  \\o__|----|  |   __\n" +
-                    "      \\ }{ /\\ )_ / _\\\n" +
-                    "      /\\__/\\ \\__O (__\n" +
-                    "     (--/\\--)    \\__/\n" +
-                    "     _)(  )(_\n" +
-                    "    `---''---`");
+            System.out.println("         __\n" +
+                    " _(\\    |@@|\n" +
+                    "(__/\\__ \\--/ __\n" +
+                    "   \\___|----|  |   __\n" +
+                    "       \\ }{ /\\ )_ / _\\\n" +
+                    "       /\\__/\\ \\__O (__\n" +
+                    "      (--/\\--)    \\__/\n" +
+                    "      _)(  )(_\n" +
+                    "     `---''---`");
             System.out.println(Colors.RED + "Sorry There Was an Error." + Colors.RESET);
         }
     }
